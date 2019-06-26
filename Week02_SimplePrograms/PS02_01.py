@@ -1,9 +1,10 @@
 
 def remainingBalance(balance, numberMonths):
     """
-    Calculate remaining balance (balance) after a certain number of months (numberMonths). 
-    Uses recursive algorithm. The variable numberMonths is decremented to stop the recursive call
-    To make it more generalizable it expects these variables in the global scope:
+    Calculate remaining balance (balance) after a certain number of months
+    (numberMonths). Uses recursive algorithm. The variable numberMonths is
+    decremented to stop the recursive call To make it more generalizable it
+    expects these variables in the global scope:
         (annualInterestRate, monthlyPaymentRate, balance)
 
     Args:
