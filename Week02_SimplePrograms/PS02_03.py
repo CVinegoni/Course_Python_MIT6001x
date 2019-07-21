@@ -111,7 +111,7 @@ def calculateBalanceAfterOneYear(balance, MonthlyPayment):
     """
 
     for months in range(1, 13):     # calculate over a year period
-        monthlyUnpaidBalance = balance-MonthlyPayment
+        monthlyUnpaidBalance = balance - MonthlyPayment
         balance = (monthlyUnpaidBalance + monthlyInterestRate
                    * monthlyUnpaidBalance)
     return balance
@@ -141,8 +141,8 @@ def calculateLowestPayment(balance, lowerBoundPayment, upperBoundPayment):
     upperBoundPayment = round(upperBoundPayment, 2)
 
     # calculate mid values of the interval
-    midValue = round(lowerBoundPayment +
-                     (upperBoundPayment-lowerBoundPayment)/2, 2)
+    midValue = round(lowerBoundPayment
+                     + (upperBoundPayment - lowerBoundPayment) / 2, 2)
 
     # set the minimum montly payment to check at midvalue
     minimumFixedMonthlyPayment = midValue
@@ -170,19 +170,20 @@ def calculateLowestPayment(balance, lowerBoundPayment, upperBoundPayment):
         balance, lowerBoundPayment, upperBoundPayment)
 
 
-annualInterestRate = 0.20    # Monthly interest rate
-balance = 320000                   # Balance
-numberMonths = 12              # Number of months over which to calculate the balance
+annualInterestRate = 0.20       # Monthly interest rate
+balance = 320000                # Balance
+# Number of months over which to calculate the balance
+numberMonths = 12
 
 # calculate the monthly interest rate
-monthlyInterestRate = annualInterestRate/12.0
+monthlyInterestRate = annualInterestRate / 12.0
 
 # calculate lower bound value
-lowerBoundPayment = balance/numberMonths
+lowerBoundPayment = balance / numberMonths
 
 # calculate upper bound value
 upperBoundPayment = balance * \
-    ((1 + monthlyInterestRate)**numberMonths)/numberMonths
+    ((1 + monthlyInterestRate) ** numberMonths) / numberMonths
 
 originalBalance = balance
 print(calculateLowestPayment(balance, lowerBoundPayment, upperBoundPayment))
