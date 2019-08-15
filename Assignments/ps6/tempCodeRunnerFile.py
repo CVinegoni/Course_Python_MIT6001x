@@ -1,3 +1,1 @@
-storia = get_story_string()
-ciphertext = CiphertextMessage(storia)
-print(ciphertext.decrypt_message())
+    c = MITCampus(Location(1,2))
